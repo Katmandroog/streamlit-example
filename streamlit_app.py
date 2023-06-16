@@ -10,7 +10,7 @@ input_text = st.text_area("Enter the conversation transcript:", max_chars=60000)
 
 
 # Define the functions
-@st.cache(allow_output_mutation=True)
+@st.cache
 def content_understanding(transcript: str) -> str:
     conversation = [
         {
@@ -26,7 +26,7 @@ def content_understanding(transcript: str) -> str:
     )
     return chat_completion.choices[0].message.content
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 def response_recommendation(transcript: str) -> str:
     conversation = [
         {
@@ -42,7 +42,7 @@ def response_recommendation(transcript: str) -> str:
     )
     return chat_completion.choices[0].message.content
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 def urgency_detection(transcript: str) -> str:
     conversation = [
         {
@@ -58,7 +58,7 @@ def urgency_detection(transcript: str) -> str:
     )
     return chat_completion.choices[0].message.content
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 def keyword_analysis(transcript: str) -> str:
     conversation = [
         {
@@ -74,7 +74,7 @@ def keyword_analysis(transcript: str) -> str:
     )
     return chat_completion.choices[0].message.content
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 def sentiment_and_satisfaction_analysis(transcript: str) -> str:
     conversation = [
         {
@@ -90,7 +90,7 @@ def sentiment_and_satisfaction_analysis(transcript: str) -> str:
     )
     return chat_completion.choices[0].message.content
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 def competitor_mention_analysis(transcript: str) -> str:
     conversation = [
         {
@@ -106,7 +106,7 @@ def competitor_mention_analysis(transcript: str) -> str:
     )
     return chat_completion.choices[0].message.content
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 def sales_opportunity_detection(transcript: str) -> str:
     conversation = [
         {
@@ -122,7 +122,7 @@ def sales_opportunity_detection(transcript: str) -> str:
     )
     return chat_completion.choices[0].message.content
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 def call_duration_analysis(transcript: str) -> str:
     conversation = [
         {
@@ -138,7 +138,7 @@ def call_duration_analysis(transcript: str) -> str:
     )
     return chat_completion.choices[0].message.content
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 def action_item_extraction(transcript: str) -> str:
     conversation = [
         {
@@ -154,7 +154,7 @@ def action_item_extraction(transcript: str) -> str:
     )
     return chat_completion.choices[0].message.content
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 def call_summary_generation(transcript: str) -> str:
     conversation = [
         {
