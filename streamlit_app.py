@@ -174,40 +174,51 @@ def call_summary_generation(transcript: str) -> str:
 
 # Create the buttons
 
-if st.button("Analyze"):
-    st.header("Analysis Results")
-    
-    col1, col2 = st.columns(2)
+t1, t2, t3 = st.columns(3)
 
-    with col1:
-        st.subheader("Content Understanding")
-        st.write(content_understanding(transcript))
+if t1.button("Content Understanding"):
+    st.write("Content Understanding:\n\n")
+    st.markdown(content_understanding(input_text))
 
-        st.subheader("Response Recommendation")
-        st.write(response_recommendation(transcript))
+if t2.button("Response Recommendation"):
+    st.write("Response Recommendation:\n\n")
+    st.markdown(response_recommendation(input_text))
 
-        st.subheader("Urgency Detection")
-        st.write(urgency_detection(transcript))
+if t3.button("Urgency Detection"):
+    st.write("Urgency Detection:\n\n")
+    st.markdown(urgency_detection(input_text))
 
-        st.subheader("Keyword Analysis")
-        st.write(keyword_analysis(transcript))
+t4, t5, t6 = st.columns(3)
 
-        st.subheader("Sentiment and Satisfaction Analysis")
-        st.write(sentiment_and_satisfaction_analysis(transcript))
+if t4.button("Keyword Analysis"):
+    st.write("Keyword Analysis:\n\n")
+    st.markdown(keyword_analysis(input_text))
 
-    with col2:
-        st.subheader("Competitor Mention Analysis")
-        st.write(competitor_mention_analysis(transcript))
+if t5.button("Sentiment and Satisfaction Analysis"):
+    st.write("Sentiment and Satisfaction Analysis:\n\n")
+    st.markdown(sentiment_and_satisfaction_analysis(input_text))
 
-        st.subheader("Sales Opportunity Detection")
-        st.write(sales_opportunity_detection(transcript))
+if t6.button("Competitor Mention Analysis"):
+    st.write("Competitor Mention Analysis:\n\n")
+    st.markdown(competitor_mention_analysis(input_text))
 
-        st.subheader("Call Duration Analysis")
-        st.write(call_duration_analysis(transcript))
+t7, t8, t9 = st.columns(3)
 
-        st.subheader("Action Item Extraction")
-        st.write(action_item_extraction(transcript))
+if t7.button("Sales Opportunity Detection"):
+    st.write("Sales Opportunity Detection:\n\n")
+    st.markdown(sales_opportunity_detection(input_text))
 
-        st.subheader("Call Summary Generation")
-        st.write(call_summary_generation(transcript))
+if t8.button("Call Duration Analysis"):
+    st.write("Call Duration Analysis:\n\n")
+    st.markdown(call_duration_analysis(input_text))
+
+if t9.button("Action Item Extraction"):
+    st.write("Action Item Extraction:\n\n")
+    st.markdown(action_item_extraction(input_text))
+
+t10, t11, _ = st.columns(3)
+
+if t10.button("Call Summary Generation"):
+    st.write("Call Summary Generation:\n\n")
+    st.markdown(call_summary_generation(input_text))
 
