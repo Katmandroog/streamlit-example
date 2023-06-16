@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 
 # Set OpenAI API key
-openai.api_key = "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"
+openai.api_key = "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"
 # Interface
 st.title("CSM Call Analysis Dashboard")
 # Define the input text
