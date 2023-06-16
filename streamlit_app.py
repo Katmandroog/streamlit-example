@@ -177,33 +177,37 @@ def call_summary_generation(transcript: str) -> str:
 if st.button("Analyze"):
     st.header("Analysis Results")
     
-    st.subheader("Content Understanding")
-    st.write(content_understanding(transcript))
-    
-    st.subheader("Response Recommendation")
-    st.write(response_recommendation(transcript))
-    
-    st.subheader("Urgency Detection")
-    st.write(urgency_detection(transcript))
-    
-    st.subheader("Keyword Analysis")
-    st.write(keyword_analysis(transcript))
-    
-    st.subheader("Sentiment and Satisfaction Analysis")
-    st.write(sentiment_and_satisfaction_analysis(transcript))
-    
-    st.subheader("Competitor Mention Analysis")
-    st.write(competitor_mention_analysis(transcript))
-    
-    st.subheader("Sales Opportunity Detection")
-    st.write(sales_opportunity_detection(transcript))
-    
-    st.subheader("Call Duration Analysis")
-    st.write(call_duration_analysis(transcript))
-    
-    st.subheader("Action Item Extraction")
-    st.write(action_item_extraction(transcript))
-    
-    st.subheader("Call Summary Generation")
-    st.write(call_summary_generation(transcript))
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.subheader("Content Understanding")
+        st.write(content_understanding(transcript))
+
+        st.subheader("Response Recommendation")
+        st.write(response_recommendation(transcript))
+
+        st.subheader("Urgency Detection")
+        st.write(urgency_detection(transcript))
+
+        st.subheader("Keyword Analysis")
+        st.write(keyword_analysis(transcript))
+
+        st.subheader("Sentiment and Satisfaction Analysis")
+        st.write(sentiment_and_satisfaction_analysis(transcript))
+
+    with col2:
+        st.subheader("Competitor Mention Analysis")
+        st.write(competitor_mention_analysis(transcript))
+
+        st.subheader("Sales Opportunity Detection")
+        st.write(sales_opportunity_detection(transcript))
+
+        st.subheader("Call Duration Analysis")
+        st.write(call_duration_analysis(transcript))
+
+        st.subheader("Action Item Extraction")
+        st.write(action_item_extraction(transcript))
+
+        st.subheader("Call Summary Generation")
+        st.write(call_summary_generation(transcript))
 
